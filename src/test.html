@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv = "X-UA-Compatible" content = "IE=edge,chrome=1" />
+    <meta http-equiv = "X-UA-Compatible" content = "chrome=1" >
+    <title>拓拓2</title>
+    <link rel="stylesheet" href="styles/icon/iconfont.css">
+    <link rel="stylesheet" href="../dist/index.css">
+    <script src="lib/tinymce/tinymce.min.js"></script>
+    <script>
+        tinymce.init({
+
+            selector: '.mytextarea',
+            plugins: [
+                'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+                'searchreplace wordcount visualblocks visualchars code fullscreen',
+                'insertdatetime media nonbreaking save table contextmenu directionality',
+                'emoticons template paste textcolor colorpicker textpattern imagetools codesample toc help'
+            ],
+            toolbar: 'undo redo | insert | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent| link  ',
+//            toolbar: 'undo redo | insert | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+            height :260,
+            statusbar: false,
+            menubar: false,
+            language: 'zh_CN'
+        });
+
+
+    </script>
+</head>
+<body>
+<div style="display: none;" class="page">
+    <!--方向.icon-arrow-right-circle-->
+    <div class="loginPage">
+        <div class="box-cont">
+            <!--登录-->
+            <div class="login-con sign f-l" style="display:none ;">
+                <img class="banner" src="image/banner.png" alt="">
+                <!--邮箱-->
+                <div class="form-group">
+                    <div class="input">
+                        <em class=" iconfont icon-email"></em>
+                        <input class="email" type="text" placeholder="邮箱"/>
+                    </div>
+                    <p class="error-notic">账号不存在</p>
+                </div>
+                <!--密码-->
+                <div class="form-group">
+                    <div class="input">
+                        <em class="iconfont icon-lock"></em>
+                        <input class="password" type="password" placeholder="密码">
+                        <a class="forgetPass">忘记密码?</a>
+
+                    </div>
+                    <p class="error-notic">密码错误，请重新输入</p>
+                </div>
+
+                <button type="submit" class="btn loginBtn  pr tran">
+                    <a href="jacascript:;" class="tran">登&nbsp;录</a>
+                    <img class="loading" src="dist/image/loading.gif" alt="加载..."  style="display: block;">
+                </button>
+                <p class="otherLogin">第三方登录</p>
+                <div class="otherLink">
+                    <a class="btn iconfont icon-weixin tran" href=""> </a>
+                    <a class="btn iconfont icon-qq tran" href=""></a>
+                    <a class="btn iconfont icon-weibo tran" href=""></a>
+                </div>
+                <p class="lm-ft">还没有账号？<a href="" class="move-next">注册新账号</a></p>
+
+            </div>
+
+
+
+            <!--注册-->
+            <div class="signUp sign f-l" style="display:none">
+                <img class="banner" src="image/banner.png" alt="">
+                <p class="signTitle">注册新账号</p>
+                <!--邮箱-->
+                <div class="form-group">
+                    <div class="input">
+                        <em class="iconfont icon-email"></em>
+                        <input class="email" type="email" placeholder="邮箱"/>
+                    </div>
+                    <p class="error-notic">请输入正确邮箱</p>
+                </div>
+                <!--验证码-->
+                <div class="form-group signUp-verify">
+                    <div class="input">
+                        <input class="signUp-verify-input" type="text" placeholder="验证码">
+                        <a class="refresh"  href="javascript:;" >刷新</a>
+                    </div>
+                    <img class="verifyPic" src="" alt="">
+                </div>
+
+
+                <button type="submit" class="btn loginBtn  pr tran">
+                    <a href="jacascript:;" class="tran">注&nbsp;册</a>
+                    <img class="loading" src="dist/image/loading.gif" alt="加载..."  style="display: block;">
+                </button>
+
+                <p class="lm-ft">已有账号？<a href="" class="move-back">登录</a></p>
+            </div>
+
+            <!--邮箱验证-->
+            <div class=" signVerify sign f-l" style="display: none;">
+                <img class="banner" src="image/banner.png" alt="">
+                <p class="signTitle">已向 <a href="" class="emailVerify">adasfsf@gmail.com</a>发送验证码</p>
+                <p class="signTitle">请在10分钟内输入收到的验证码</p>
+
+                <div class="form-group">
+                    <div class="input">
+                        <em class="iconfont icon-yanzheng"></em>
+                        <input class="signVerify-input" type="text" placeholder="验证码"/>
+                        <span class="signVerify-time"><em>60</em>s后</span>
+                        <a href="javascript:;" class="resend">重新发送</a>
+                    </div>
+                    <p class="error-notic ">验证码错误</p>
+                </div>
+
+                <button type="submit" class="btn loginBtn  pr tran">
+                    <a href="jacascript:;" class="tran">下一步</a>
+                    <img class="loading" src="dist/image/loading.gif" alt="加载..."  style="display: block;">
+                </button>
+                <p class="lm-ft"><a href="" class=" move-first" >使用其他账号注册</a></p>
+            </div>
+
+            <!--设置密码-->
+            <div class="signPassword sign f-l" style="display:none ;">
+                <img class="banner" src="image/banner.png" alt="">
+                <p class="signTitle">设置密码</p>
+
+                <!---->
+                <div class="form-group">
+                    <div class="input">
+                        <input class="sign-input" type="text" placeholder="请输入登录密码"/>
+                    </div>
+                    <p class="error-notic ">请输入合理的密码</p>
+                </div>
+
+                <!--再次输入-->
+                <div class="form-group">
+                    <div class="input">
+                        <input class="sign-input" type="text" placeholder="再次输入登录密码"/>
+                    </div>
+                    <p class="error-notic ">两次输入不一致</p>
+                </div>
+                <button type="submit" class="btn loginBtn  pr tran">
+                    <a href="jacascript:;" class="tran">注册完成</a>
+                    <img class="loading" src="dist/image/loading.gif" alt="加载..."  style="display: block;">
+                </button>
+                <p class="lm-ft"><a href="" class=" move-first" >使用其他账号注册</a></p>
+            </div>
+
+            <!--注册成功-->
+            <div class="signSuccess sign f-l" style="display:none ;">
+                <img class="banner" src="image/setSuccess.png" alt="">
+                <p class="signTitle">恭喜您，注册成功！</p>
+                <button type="submit" class="btn loginBtn  pr tran">
+                    <a href="jacascript:;" class="tran">进入拓拓</a>
+                    <img class="loading" src="dist/image/loading.gif" alt="加载..."  style="display: block;">
+                </button>
+                <p class="lm-ft"><a href="" class=" move-first" >完善个人信息</a></p>
+            </div>
+
+            <!--密码重置-->
+            <div class="signSuccess sign f-l" style="display: none;">
+                <img class="banner" src="image/setPass.png" alt="">
+                <p class="signTitle">密码重置成功！</p>
+                <button type="submit" class="btn loginBtn  pr tran">
+                    <a href="jacascript:;" class="tran">重新登录</a>
+                    <img class="loading" src="dist/image/loading.gif" alt="加载..."  style="display: block;">
+                </button>
+            </div>
+
+            <!--个人信息-->
+            <div class="signUser sign f-l" style="display:none ;">
+                <div class="HeaderPic" style="background-image: url(https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2944827630,938715804&fm=23&gp=0.jpg)">编辑</div>
+                <div class="form-group">
+                    <div class="input">
+                        <input class="" type="text" placeholder="用户名"/>
+                    </div>
+                    <p class="error-notic ">请输入用户名</p>
+                </div>
+                <div class="form-group">
+                    <div class="input">
+                        <input class="" type="text" placeholder="联系方式"/>
+                    </div>
+                    <p class="error-notic ">请输入用户名</p>
+                </div>
+                <button type="submit" class="btn loginBtn  pr tran">
+                    <a href="jacascript:;" class="tran">确&nbsp;认</a>
+                    <img class="loading" src="dist/image/loading.gif" alt="加载..."  style="display: block;">
+                </button>
+            </div>
+
+            <!--第三方登录并绑定-->
+            <div class="signOther sign f-l" style="display:none ;">
+                <img class="banner" src="image/banner.png" alt="">
+                <!--邮箱-->
+                <div class="form-group">
+                    <div class="input">
+                        <em class=" icon-envelope"></em>
+                        <input class="email" type="text" placeholder="邮箱"/>
+                    </div>
+                    <p class="error-notic">账号不存在</p>
+                </div>
+                <!--密码-->
+                <div class="form-group">
+                    <div class="input">
+                        <em class="icon-lock"></em>
+                        <input class="password" type="password" placeholder="密码">
+                        <a href="javascript:;" class="forgetPass">忘记密码?</a>
+
+                    </div>
+                    <p class="error-notic">密码错误，请重新输入</p>
+                </div>
+
+                <button type="submit" class="btn loginBtn  pr tran">
+                    绑定并登录
+                    <img class="loading" src="dist/image/loading.gif" alt="加载..."  style="display: block;">
+                </button>
+                <button type="submit" class="btn loginBack  pr tran">
+                    还没有账号？注册登录
+                    <img class="loading" src="dist/image/loading.gif" alt="加载..."  style="display: block;">
+                </button>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div id="wrap" style="display: ;">
+    <div class="header clearfix">
+        <nav>
+            <a href="" class="logo"> <img src="image/logo.png" alt=""></a>
+            <a href="" class="active"><strong>首页</strong></a>
+            <a href=""><strong>团队</strong></a>
+            <a href=""><strong>项目</strong></a>
+        </nav>
+        <div class="user-hand">
+            <a href="#" class="userMsg">
+                <img class="userHeadImg" src="/image/headImg.png" alt="用户头像">Leo Perkins<i class="iconfont icon-arrow-down"></i> </a>
+        </div>
+    </div>
+
+    <!--首页-->
+    <div class="homePage" style="display:none ;">
+        <h2>我的团队</h2>
+        <div class="clearfix">
+            <div class="card " style="background-image: url(/image/login_bg.png) ;">
+                <div class="card-intro">
+                    <p class="teamName">拓拓V2.0</p>
+                    <p>一个全新的拓拓，全力助力于敏捷开发工作</p>
+                </div>
+                <div class="card-cont " >
+                    <a href="javascript:;" class="cc  cc1">
+                        <i class="iconfont icon-grid-squares"></i>
+                    </a>
+                    <a href="javascript:;" class="cc  cc2">
+                        <i class="iconfont icon-list"></i>
+                    </a>
+                    <a href="javascript:;" class="cc  cc3">
+                        <i class="iconfont icon-users"></i>
+                    </a>
+                </div>
+                <div class="xiabiao">
+                    <i class="iconfont icon-owner"></i>
+                </div>
+            </div>
+            <div class="card card-add">
+                <i class="card-add-icon iconfont icon-plus-circle"></i>
+                <p class="card-add-word">新建团队</p>
+            </div>
+        </div>
+
+
+        <h2>我的项目</h2>
+        <div>
+            <div class="card " style="background-image: url(/image/login_bg.png) ;">
+                <div class="card-msg">
+                    <p class="teamName">Guardians of the Galaxy</p>
+                    <p>必须破釜沉舟决一死战，才可能拯救整个银河系</p>
+                </div>
+                <div class="xiabiao">
+                    <i class="iconfont icon-owner"></i>
+                </div>
+            </div>
+            <div class="card card-add">
+                <i class="card-add-icon iconfont icon-plus-circle"></i>
+                <p class="card-add-word">新建项目</p>
+            </div>
+        </div>
+    </div>
+
+    <!--新建项目/新建团队-->
+    <div class="addProTeam" style="display:none">
+        <h2>新建项目</h2>
+
+        <div>
+            <span class="title">项目名称</span>
+            <input class="cont" type="text"/>
+        </div>
+        <div>
+            <span  class="title">项目简介</span>
+            <textarea  class="cont" name="proIntro" ></textarea>
+        </div>
+        <div>
+            <span  class="title">项目封面</span>
+            <div class=" upImg bgStyle" style="background-image:url(/image/login_bg.png);">
+                <a href="javascript:;" class="upImg-icon"><i class=" iconfont icon-cloud-upload"></i></a>
+            </div>
+        </div>
+        <div>
+            <span  class="title"></span>
+            <button class="btn cont">新建</button>
+        </div>
+
+    </div>
+
+    <!-- 团队详情/项目详情 -->
+    <div class="pro-Team" style="display:none ;">
+        <div class="pt-hd">
+            <div class="pt-hd-cont clearfix">
+
+                <h1>MINTCODE</h1>
+                <a href=""><i class="iconfont icon-settings"></i></a>
+
+
+                <p>我们认同并遵守敏捷宣言，工作及管理全程采用敏捷开发模式（Scrum）。我们成立5年多来，凭借敏捷开发模式创造了不菲的工作成绩和独特的公司文化。</p>
+            </div>
+
+        </div>
+        <div class="pt-bd page-cont">
+            <div>
+                <h2>团队成员 <em>6</em></h2>
+                <button class="btn btnColor3 btn-Timesheet">
+                    <i class="iconfont icon-calendar"></i>
+                    <span>添加TimeSheet</span>
+                </button>
+            </div>
+
+            <div class="memberList">
+                <div class="card ">
+                    <div class="card-msg clearfix tran">
+                        <img  src="/image/headImg.png" alt="">
+                        <div class="memberIntro">
+                            <p class="mt-name">leoperkins <i class="iconfont icon-owner iconYellow"></i></p>
+                            <span class="mt-email">loome@163.com</span>
+                            <ul>
+                                <li>PO</li>
+                                <li>CEO</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card-detial clearfix tran">
+
+                        <a href="" class="card-cancel">
+                            <i class="iconfont icon-del"></i>
+                        </a>
+                        <img  src="/image/headImg.png" alt="">
+                        <div class="memberIntro">
+                            <p class="mt-name">leoperkins</p>
+                            <span class="mt-email">loome@163.com</span>
+                        </div>
+                        <div class="cd-msg">
+                            <div><span class="title">团队权限</span> <span>拥有者</span></div>
+                            <div><span class="title">成员标签</span><div class="tagList">sfsf </div></div>
+                            <div><span class="title">联系方式</span><span>18855411234</span></div>
+                        </div>
+                        <p class="btn btnColor1"><a href="javascript:;">退出团队</a></p>
+                    </div>
+                </div>
+
+                <div class="card ">
+                    <div class="card-msg clearfix tran">
+                        <img  src="/image/headImg.png" alt="">
+                        <div class="memberIntro">
+                            <p class="mt-name">leoperkins <i class="iconfont icon-owner iconYellow"></i></p>
+                            <span class="mt-email">loome@163.com</span>
+                            <ul>
+                                <li>PO</li>
+                                <li>CEO</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card-detial clearfix tran">
+
+                        <a href="" class="card-cancel">
+                            <i class="iconfont icon-del"></i>
+                        </a>
+                        <img  src="/image/headImg.png" alt="">
+                        <div class="memberIntro">
+                            <p class="mt-name">leoperkins</p>
+                            <span class="mt-email">loome@163.com</span>
+                        </div>
+                        <div class="cd-msg">
+                            <div><span class="title">团队权限</span> <span>拥有者</span></div>
+                            <div><span class="title">成员标签</span><div class="tagList">sfsf </div></div>
+                            <div><span class="title">联系方式</span><span>18855411234</span></div>
+                        </div>
+                        <p class="btn btnColor2"><span>用户待激活,<a href="javascript:;">重新发送</a></span></p>
+                    </div>
+                </div>
+                <div class="card ">
+                    <div class="card-msg clearfix tran">
+                        <img  src="/image/headImg.png" alt="">
+                        <div class="memberIntro">
+                            <p class="mt-name">leoperkins <i class="iconfont icon-owner iconYellow"></i></p>
+                            <span class="mt-email">loome@163.com</span>
+                            <ul>
+                                <li>PO</li>
+                                <li>CEO</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="card ">
+                    <div class="card-msg clearfix tran">
+                        <img  src="/image/headImg.png" alt="">
+                        <div class="memberIntro">
+                            <p class="mt-name">leoperkins <i class="iconfont icon-owner iconYellow"></i></p>
+                            <span class="mt-email">loome@163.com</span>
+                            <ul>
+                                <li>PO</li>
+                                <li>CEO</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card-detial clearfix tran">
+
+                        <a href="" class="card-cancel">
+                            <i class="iconfont icon-del"></i>
+                        </a>
+                        <img  src="/image/headImg.png" alt="">
+                        <div class="memberIntro">
+                            <p class="mt-name">leoperkins</p>
+                            <span class="mt-email">loome@163.com</span>
+                        </div>
+                        <div class="cd-msg">
+                            <div><span class="title">团队权限</span> <span>拥有者</span></div>
+                            <div><span class="title">成员标签</span><div class="tagList">sfsf </div></div>
+                            <div><span class="title">联系方式</span><span>18855411234</span></div>
+                        </div>
+                        <p class="btn btnColor2"><span>用户待激活,<a href="javascript:;">重新发送</a></span></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!--添加成员按钮-->
+        <a class="add-member" href=""><i class="iconfont icon-user-add"></i></a>
+    </div>
+
+
+    <a href="javascript:;" class="back iconfont icon-back tran"></a>
+
+
+
+
+    <!--右侧slider框-->
+    <!--右侧弹框出现时，给body添加类sliderShow -->
+    <div class="rightSlider tran open" style="display:none ;">
+        <div class="slider-hd">
+            <span>团队信息选项</span>
+            <i class="iconfont icon-close"></i>
+        </div>
+        <div class="slider-bd">
+            <div>
+                <p class="title">团队名称</p>
+                <input type="text"/>
+            </div>
+            <div>
+                <p class="title">团队简介</p>
+                <div>
+                    <Input type="textarea" placeholder="" />
+                </div>
+            </div>
+            <div>
+                <p class="title">团队封面</p>
+                <div class="upload">
+                    <div class=" upImg bgStyle" style="background-image:url(/image/login_bg.png);">
+                        <a href="javascript:;" class="upImg-icon"><i class=" iconfont icon-cloud-upload"></i></a>
+                    </div>
+                </div>
+
+
+            </div>
+            <div>
+                <p class="title">拥有者</p>
+                <div class="">
+                    <div class="liLeft">
+                        <img src="/image/login_bg.png" alt=""/>
+                        <span>emilyYe</span>
+                    </div>
+                    <div class="liRight">
+                        <button class="btn tran ">移交</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="slider-ft">
+            <button class="btn tran btnColor3">保存</button>
+            <a href="javascript:;" class="iconYellow">删除团队</a>
+        </div>
+    </div>
+
+    <!--白板-->
+    <div class="whiteBoard" style="display:none ;">
+        <div class="wb-hd">
+            <ol class="breadcrumb">
+                <li>
+                    <a href="/"><i class="iconfont icon-users"></i>mintcode</a>
+                </li>
+                <li>
+                    里程碑演示代号 - sprint1
+                </li>
+            </ol>
+            <!--import { Breadcrumb } from 'antd';-->
+            <!--ReactDOM.render(-->
+            <!--<Breadcrumb separator=">">-->
+            <!--<Breadcrumb.Item>Home</Breadcrumb.Item>-->
+            <!--<Breadcrumb.Item href=""><i class="iconfont icon-users">mintcode</Breadcrumb.Item>-->
+            <!--<Breadcrumb.Item>里程碑演示代号 - sprint1</Breadcrumb.Item>-->
+            <!--</Breadcrumb>-->
+            <!--, mountNode);-->
+        </div>
+        <div class="box  form-white" >
+            <table style="display: ;" class="whiteboard-table" >
+                <thead>
+                <tr class="taskboard-row">
+                    <th class="taskboard-cell taskboard-parent">产品backlog</th>
+                    <th class="taskboard-cell">计划 <i>6</i></th>
+                    <th class="taskboard-cell">进行 <i>10</i></th>
+                    <th class="taskboard-cell">完成 <i>1</i></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="taskboard-row">
+
+                    <td class="taskboard-cell taskboard-parent">
+                        <div class="tb-pivot-item">
+                            <!--<div class="taskboard-parent-wrapper wordwrap">-->
+                            <span class="wit-title">作量统计的前端页面工作量统计的前端页面页面</span>
+                            <div class="assign">
+                                <img class="userImg" src="image/headerImg.jpg" title="larry"/>
+                                <div class="workName"> <i class="iconfont icon-folder"></i><span>tuotuotuo2tuotuo2tuotuo2tuotuo2tuo2</span></div>
+                            </div>
+                            <a href="javascript:;" title="Add: Task" class="add-icon iconfont icon-plus"></a>
+                        </div>
+                    </td>
+                    <td class="taskboard-cell" data-bind="droppable:1">
+                        <div class="tb-tile tran">
+                            <div class="tb-tile-content tran">
+                                <div class="wit-title"  title="入组静态页面独立部署">入组静入组静态页面独立部署入组静态页面独立部署入组静态页面独立部署入组静态页面独立部署入组静态页面独立部署入组静态页面独立部署入组静态页面独立部署态页面独立部署</div>
+                                <div class="wit-extra">
+                                    <div class="wit-remaining-time" >2<span>h</span></div>
+                                    <img src="image/headerImg.jpg" class="userImg"  title="Larry Xu"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tb-tile tran">
+                            <div class="tb-tile-content tran">
+                                <div class="wit-title"  title="入组静态页面独立部署">入组静入组静态页面独立部署入组静态页面独立部署入组静态页面独立部署入组静态页面独立部署入组静态页面独立部署入组静态页面独立部署入组静态页面独立部署态页面独立部署</div>
+                                <div class="wit-extra">
+                                    <div class="wit-remaining-time" >2<span>h</span></div>
+                                    <img src="image/headerImg.jpg" class="userImg"  title="Larry Xu"/>
+                                </div>
+                            </div>
+                        </div><div class="tb-tile tran">
+                        <div class="tb-tile-content tran">
+                            <div class="wit-title"  title="入组静态页面独立部署">入组静入组静态页面独立部署入组静态页面独立部署入组静态页面独立部署入组静态页面独立部署入组静态页面独立部署入组静态页面独立部署入组静态页面独立部署态页面独立部署</div>
+                            <div class="wit-extra">
+                                <div class="wit-remaining-time" >2<span>h</span></div>
+                                <img src="image/headerImg.jpg" class="userImg"  title="Larry Xu"/>
+                            </div>
+                        </div>
+                    </div><div class="tb-tile tran">
+                        <div class="tb-tile-content tran">
+                            <div class="wit-title"  title="入组静态页面独立部署">入组静入组静态页面独立部署入组静态页面独立部署入组静态页面独立部署入组静态页面独立部署入组静态页面独立部署入组静态页面独立部署入组静态页面独立部署态页面独立部署</div>
+                            <div class="wit-extra">
+                                <div class="wit-remaining-time" >2<span>h</span></div>
+                                <img src="image/headerImg.jpg" class="userImg"  title="Larry Xu"/>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    </td>
+                    <td class="taskboard-cell" data-bind="droppable:2">
+                        <!-- ko template:{foreach:InProgress_Tasks, name:'temp-tile', afterAdd:$root.hide} --><!-- /ko -->
+                    </td>
+                    <td class="taskboard-cell" data-bind="droppable:3">
+                        <!-- ko template:{foreach:Done_Tasks, name:'temp-tile', afterAdd:$root.hide} --><!-- /ko -->
+                    </td>
+                </tr>
+                <tr class="taskboard-row">
+
+                    <td class="taskboard-cell taskboard-parent">
+                        <div class="tb-pivot-item">
+                            <!--<div class="taskboard-parent-wrapper wordwrap">-->
+                            <span class="wit-title">作量统计的前端页面工作量统计的前端页面页面</span>
+                            <div class="assign">
+                                <img class="userImg" src="image/headerImg.jpg" />
+                                <div class="workName"> <i class="iconfont icon-folder"></i><span>tuotuotuo2tuotuo2tuotuo2tuotuo2tuo2</span></div>
+                            </div>
+                            <a href="javascript:;" title="Add: Task" class="add-icon iconfont icon-plus"></a>
+                        </div>
+                    </td>
+
+
+
+                    <td class="taskboard-cell" data-bind="droppable:1">
+                        <div class="tb-tile tran">
+                            <div class="tb-tile-content tran">
+                                <div class="wit-title"  title="入组静态页面独立部署">入组静入组静态页面独立部署入组静态页面独立部署入组静态页面独立部署入组静态页面独立部署入组静态页面独立部署入组静态页面独立部署入组静态页面独立部署态页面独立部署</div>
+                                <div class="wit-extra">
+                                    <div class="wit-remaining-time" >2<span>h</span></div>
+                                    <img src="image/headerImg.jpg" class="userImg"  title="Larry Xu"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tb-tile tran">
+                            <div class="tb-tile-content tran">
+                                <div class="wit-title"  title="入组静态页面独立部署">入组静入组静态页面独立部署入组静态页面独立部署入组静态页面独立部署入组静态页面独立部署入组静态页面独立部署入组静态页面独立部署入组静态页面独立部署态页面独立部署</div>
+                                <div class="wit-extra">
+                                    <div class="wit-remaining-time" >2<span>h</span></div>
+                                    <img src="image/headerImg.jpg" class="userImg"  title="Larry Xu"/>
+                                </div>
+                            </div>
+                        </div><div class="tb-tile tran">
+                        <div class="tb-tile-content tran">
+                            <div class="wit-title"  title="入组静态页面独立部署">入组静入组静态页面独立部署入组静态页面独立部署入组静态页面独立部署入组静态页面独立部署入组静态页面独立部署入组静态页面独立部署入组静态页面独立部署态页面独立部署</div>
+                            <div class="wit-extra">
+                                <div class="wit-remaining-time" >2<span>h</span></div>
+                                <img src="image/headerImg.jpg" class="userImg"  title="Larry Xu"/>
+                            </div>
+                        </div>
+                    </div><div class="tb-tile tran">
+                        <div class="tb-tile-content tran">
+                            <div class="wit-title"  title="入组静态页面独立部署">入组静入组静态页面独立部署入组静态页面独立部署入组静态页面独立部署入组静态页面独立部署入组静态页面独立部署入组静态页面独立部署入组静态页面独立部署态页面独立部署</div>
+                            <div class="wit-extra">
+                                <div class="wit-remaining-time" >2<span>h</span></div>
+                                <img src="image/headerImg.jpg" class="userImg"  title="Larry Xu"/>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    </td>
+                    <td class="taskboard-cell" data-bind="droppable:2">
+                        <!-- ko template:{foreach:InProgress_Tasks, name:'temp-tile', afterAdd:$root.hide} --><!-- /ko -->
+                    </td>
+                    <td class="taskboard-cell" data-bind="droppable:3">
+                        <!-- ko template:{foreach:Done_Tasks, name:'temp-tile', afterAdd:$root.hide} --><!-- /ko -->
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="whiteboard-add">
+                <img src="image/add-backlog.png"/>
+                <p>sprint里还没有添加产品backlog</p>
+                <button class="btn ">前往添加</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!--管理迭代-->
+    <div class="backlog clearfix" style="display: ;">
+        <div id="dropProduct" class="backlog-list backlog-add">
+            <div class="inner">
+                <div class="hd">
+                    <div class="hdTitle">产品backlog </div>
+                    <span class="proNum">6</span>
+                    <a href="javascript:;" class="addPro iconfont icon-plus">
+                    </a>
+                </div>
+                <div class="content">
+                    <ul style="display: ;">
+                        <li class="backlog-item tran">
+                            <div class="item-Level">233</div>
+                            <div class="item-content">
+                                <p class="item-content-title" title="沈小四希望看到拓拓2.0新版原型">沈小四希望看到拓拓2.0新版原型</p>
+                                <div class="item-content-msg">
+                                    <span>#1685</span>
+                                    <span><i class="iconfont icon-users"></i>robin</span>
+                                    <span><i class="iconfont icon-folder"></i>TUOTUO2.0</span>
+                                </div>
+
+                            </div>
+                            <a href="javascript:;" class="proMore iconfont icon-more"></a>
+                        </li>
+                        <li class="backlog-item tran">
+                            <div class="item-Level">233</div>
+                            <div class="item-content">
+                                <p class="item-content-title" title="沈小四希望看到拓拓2.0新版原型">沈小四希望看到拓拓2.0新版原型</p>
+                                <div class="item-content-msg">
+                                    <span>#1685</span>
+                                    <span><i class="iconfont icon-users"></i>robin</span>
+                                    <span><i class="iconfont icon-folder"></i>TUOTUO2.0</span>
+                                </div>
+
+                            </div>
+                            <a href="javascript:;" class="proMore iconfont icon-more"></a>
+                        </li>
+                    </ul>
+                    <img class="BacklogPic" src="image/addBacklog.png" />
+                </div>
+            </div>
+        </div>
+        <div id="dropSprint" class="backlo-list backlog-save">
+            <div class="inner">
+                <div class="hd">
+                    <div class="hdTitle">当前迭代</div>
+                    <button class="btn add-sprint" style="display: none;">新增迭代</button>
+                    <!--ant-->
+                    <div  class="sprintSel">
+                        <span class="sprint-v" title="release2 - sprint3">release2 - sprint3</span>
+                        <span class="sprint-date">2017/04/15 - 2017/04/22</span>
+                        <i class="iconfont icon-arrow-down"></i>
+                    </div>
+                </div>
+                <div class="content">
+                    <ul>
+                        <li class="backlog-item tran">
+                            <div class="item-Level">233</div>
+                            <div class="item-content">
+                                <p class="item-content-title" title="沈小四希望看到拓拓2.0新版原型">沈小四希望看到拓拓2.0新版原型</p>
+                                <div class="item-content-msg">
+                                    <span>#1685</span>
+                                    <span><i class="iconfont icon-users"></i>robin</span>
+                                    <span><i class="iconfont icon-folder"></i>TUOTUO2.0</span>
+                                </div>
+
+                            </div>
+                            <a href="javascript:;" class="proMore iconfont icon-more"></a>
+                        </li>
+                        <li class="backlog-item tran">
+                            <div class="item-Level">233</div>
+                            <div class="item-content">
+                                <p class="item-content-title" title="沈小四希望看到拓拓2.0新版原型">沈小四希望看到拓拓2.0新版原型</p>
+                                <div class="item-content-msg">
+                                    <span>#1685</span>
+                                    <span><i class="iconfont icon-users"></i>robin</span>
+                                    <span><i class="iconfont icon-folder"></i>TUOTUO2.0</span>
+                                </div>
+
+                            </div>
+                            <a href="javascript:;" class="proMore iconfont icon-more"></a>
+                        </li>
+                    </ul>
+                    <img class="BacklogPic" src="image/dragBacklog.png" height="170" width="550"/>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</div>
+
+<!--sprint 下拉框-->
+<div class="Popups" style="width: 440px;height:330px;border: 1px solid #ddd;">
+    <div class="p-cont sprint-List-select">
+        <ul class="sprint-List">
+            <li class="tran avtive">
+                <span class="sprint-v" title="release2 - sprint3">release2 - sprint3</span> <span class="sprint-date">2017/04/15 - 2017/04/22</span>
+                <i  class="sprint-check iconfont icon-check-circle"></i>
+            </li>
+            <div class="title sprint-title ">aaa</div>
+            <li class="tran">
+                <span class="sprint-v" title="release2 - sprint3">release2 - sprint3</span> <span class="sprint-date">2017/04/15 - 2017/04/22</span>
+                <i  class="sprint-check iconfont icon-circle"></i>
+            </li>
+            <li class="tran">
+                <span class="sprint-v" title="release2 - sprint3">release2 - sprint3</span> <span class="sprint-date">2017/04/15 - 2017/04/22</span>
+                <i  class="sprint-check iconfont icon-circle"></i>
+            </li>
+        </ul>
+    </div>
+    <p class="sprint-List-ft">
+        <a class="ctl-sprint-btn" href="javascript:;"><i class="iconfont icon-settings"></i>管理迭代</a>
+    </p>
+</div>
+<!--白板Task-->
+<div class="task clearfix" style="display:none ;">
+    <!--自填-->
+    <div class="task-cont">
+        <div class="tc-hd">
+            <span>白板Task</span>
+            <a href="" class="close iconfont icon-close"></a>
+            <a href="" class="more iconfont icon-more-2-copy"></a>
+            <!--import { Menu, Dropdown, Icon } from 'antd';-->
+            <!--const menu = (-->
+            <!--<Menu>-->
+            <!--<Menu.Item>-->
+            <!--<a target="_blank" rel="noopener noreferrer" href="http://www.alipay.com/">删除</a>-->
+            <!--</Menu.Item>-->
+            <!--<Menu.Item>-->
+            <!--<a target="_blank" rel="noopener noreferrer" href="http://www.taobao.com/">2nd menu item</a>-->
+            <!--</Menu.Item>-->
+            <!--<Menu.Item>-->
+            <!--<a target="_blank" rel="noopener noreferrer" href="http://www.tmall.com/">3d menu item</a>-->
+            <!--</Menu.Item>-->
+            <!--</Menu>-->
+            <!--);-->
+
+            <!--ReactDOM.render(-->
+            <!--<Dropdown overlay={menu}>-->
+            <!--<a className="ant-dropdown-link more" href="#">-->
+            <!--<Icon type="ellipsis" />-->
+            <!--</a>-->
+            <!--</Dropdown>-->
+            <!--, mountNode);-->
+        </div>
+
+        <div class="form-group clearfix">
+            <div class="taskName">
+                <span class="tn-tag"> #1024</span><input class="tn-name" type="text" placeholder="Task标题"/>
+            </div>
+            <input class="esTime btn" type="tel" placeholder="预估时间"/>
+            <!--import { InputNumber } from 'antd';-->
+
+            <!--function onChange(value) {-->
+            <!--console.log('changed', value);-->
+            <!--}-->
+
+            <!--ReactDOM.render(-->
+            <!--<InputNumber min={0} max={10} step={0.1} onChange={onChange}  placeholder="预估时间"/>-->
+            <!--, mountNode);-->
+        </div>
+        <div class="form-group edui-container">
+            <textarea class="mytextarea"></textarea>
+        </div>
+        <div class="form-group TaskSelect">
+            <!--<div class="item pro">-->
+            <!--<p class="title">所属项目</p>-->
+            <!--<div class="selPro"></div>-->
+            <!--</div>-->
+            <!--<div class="item">-->
+            <!--<p class="title">执行者</p>-->
+            <!--<div class="selOwner"></div>-->
+            <!--</div>-->
+            <!--<div class="item">-->
+            <!--<p class="title">状态</p>-->
+            <!--<div class="selStatus"></div>-->
+            <!--</div>-->
+        </div>
+        <button class="btn btnSave btnColor3">保存</button>
+        <button class="btn btnCancel ">取消</button>
+    </div>
+    <!--任务-->
+    <div class="task-cont-right">
+        <p class="taskTitle"><span>#9325</span>| <span>沈小四希望看到拓拓2.0新版原型</span></p>
+        <div class="form-group">
+            1、基础档案接口
+            2、交易信息接口
+            3、客服页面接口
+        </div>
+        <div class="form-group">
+            <p class="title">评审标准:</p>
+            <div>以待发布级别去测试</div>
+        </div>
+        <div class="form-group">
+            <div class="item">
+                <span class="title">所属项目</span>
+                <span>聚悦健康</span>
+            </div>
+            <div class="item">
+                <span class="title">负责人</span>
+                <div class="userMsg">
+                    <img src="image/headerImg.jpg" height="300" width="326"/>
+                    <span>Loome</span>
+                </div>
+            </div>
+            <div class="item">
+                <span class="title">优先级</span>
+                <span>20</span>
+            </div>
+
+        </div>
+        <div class="form-group">
+            <div class="timeCount"></div>
+
+        </div>
+    </div>
+</div>
+<!--产品backlog-->
+<div class="task backlog" style="display:;">
+    <div class="task-cont">
+        <div class="tc-hd">
+            <span>产品backlog</span>
+            <a href="" class="close iconfont icon-close"></a>
+        </div>
+        <div class="form-group clearfix">
+            <div class="taskName">
+                <span class="tn-tag"> #1024</span><input class="tn-name" type="text" placeholder="产品backlog标题"/>
+            </div>
+            <input class="esTime btn" type="tel" placeholder="优先级"/>
+            <!--import { InputNumber } from 'antd';-->
+
+            <!--function onChange(value) {-->
+            <!--console.log('changed', value);-->
+            <!--}-->
+
+            <!--ReactDOM.render(-->
+            <!--<InputNumber min={0} max={10} step={0.1} onChange={onChange}  placeholder="优先级"/>-->
+            <!--, mountNode);-->
+        </div>
+        <div class="form-group edui-container">
+            <textarea class="mytextarea"></textarea>
+            <textarea  class="reviewStandard" placeholder="评审标准"></textarea>
+        </div>
+        <div class=""></div>
+        <div class="form-group TaskSelect">
+            <!--<div class="item pro">-->
+            <!--<p class="title">所属项目</p>-->
+            <!--<div class="selPro"></div>-->
+            <!--</div>-->
+            <!--<div class="item">-->
+            <!--<p class="title">执行者</p>-->
+            <!--<div class="selOwner"></div>-->
+            <!--</div>-->
+            <!--<div class="item">-->
+            <!--<p class="title">状态</p>-->
+            <!--<div class="selStatus"></div>-->
+            <!--</div>-->
+        </div>
+        <button class="btn btnSave btnColor3">保存</button>
+        <button class="btn btnCancel ">取消</button>
+    </div>
+</div>
+
+<!--管理迭代-->
+<div class="Popups" style="position: relative;width: 680px;overflow: hidden;border: 1px solid #eee;padding: 30px; display: ;">
+    <a href="javascript:;" class="cancel iconfont icon-close"></a>
+    <div class="p-cont p-backlog clearfix" >
+        <p class="p-title">管理迭代</p>
+        <div class="p-backlog-release" style="display: none;" >
+            <div class="p-List  release-List">
+                <ul class="panel-group" style="display: none">
+                    <li class="panel tran">
+                        release1
+                    </li>
+                    <li class="panel tran">
+                        release2
+                    </li>
+                    <li class="panel tran">
+                        release3
+                    </li>
+                    <li class="panel tran">
+                        release3
+                    </li>
+                    <li class="panel tran">
+                        release3
+                    </li>
+                    <li class="panel tran">
+                        release3
+                    </li>
+                    <li class="panel tran">
+                        release3
+                    </li>
+                    <li class="panel tran">
+                        release3
+                    </li>
+                    <li class="panel tran">
+                        release3
+                    </li>
+                    <li class="panel tran">
+                        release3
+                    </li>
+                    <li class="panel tran">
+                        release3
+                    </li>
+                    <li class="panel tran">
+                        release3
+                    </li>
+                    <li class="panel tran">
+                        release555
+                    </li>
+                </ul>
+
+            </div>
+            <div class="release-detail">
+                <div class="hd">
+                    <div class="hd-cont">
+                        <p>release</p>
+                        <span class="title">完成拓拓2基础功能</span>
+                    </div>
+                    <a href="javascript:;" class="more iconfont icon-more"></a>
+                </div>
+                <div class="sprint">
+                    <ul class="sprint-list">
+                        <li >
+                            <span class="sprint-v" >sprint1</span>
+                            <span class="sprint-date">2017/06/01~2017/06/10</span>
+                        </li>
+                        <li>
+                            <span class="sprint-v">sprint1</span>
+                            <span class="sprint-date">2017/06/01~2017/06/10</span>
+                        </li>
+                        <li class="addSprint">
+                            <span class="sprint-v">sprint1</span>
+                            <div></div>
+                        </li>
+                    </ul>
+                </div>
+                <p class="sprint-List-ft">
+                    <a class="add-sprint-btn" href="javascript:;">添加 Sprint</a>
+                </p>
+
+            </div>
+        </div>
+        <div class="p-backlog-noRelease">
+            <img class="writeSprint" src="image/writeSprint.png" />
+            <p>添加里程碑</p>
+            <img class="arrows" src="image/arrows.png"/>
+        </div>
+    </div>
+    <div class="add-release">
+
+    </div>
+    <!--<button class="btn add-release-btn btnColor3">+</button>-->
+</div>
+
+
+
+
+
+
+<!--弹出层1  邀请新成员-->
+<div class="Popups" style="display: none;">
+    <a href="javascript:;" class="cancel iconfont icon-close"></a>
+
+    <div class="p-cont p-addMember">
+        <p class="p-title">邀请新成员</p>
+        <div class="search">
+            <input type="text" placeholder="输入邮箱查找，回车确认"/>
+            <!--有搜索结果-->
+            <div class="search-cont" style="display: ">
+                <p class="title">团队</p>
+                <ul class="">
+                    <li class="tran">
+                        <div class="liLeft"><span class="lhColor">emliy</span><span>Ye</span></div>
+                        <div class="liRight"><i class="iconfont icon-owner iconYellow"></i><span class="">leoperkins</span></div>
+                    </li>
+                    <li class="tran">
+                        <div class="liLeft"><span>emliy@163.om</span></div>
+                        <div class="liRight"><i class="iconfont icon-owner iconYellow"></i><span class="unJoined">leoperkins</span></div>
+                    </li>
+                </ul>
+                <p class="title">成员</p>
+                <ul class="">
+                    <li class="tran">
+                        <div class="liLeft"><span class="lhColor">emliy</span><span>Ye</span></div>
+                        <div class="liRight"> <span class="lhColor">emliy</span><span class="unJoined">@163.om</span></div>
+                    </li>
+                    <li class="tran">
+                        <div class="liLeft"><span class="lhColor">emliy</span><span>Ye</span></div>
+                        <div class="liRight"> <span class="lhColor">emliy</span><span class="unJoined">@163.om</span></div>
+                    </li> <li class="tran">
+                    <div class="liLeft"><span class="lhColor">emliy</span><span>Ye</span></div>
+                    <div class="liRight"> <span class="lhColor">emliy</span><span class="unJoined">@163.om</span></div>
+                </li> <li class="tran">
+                    <div class="liLeft"><span class="lhColor">emliy</span><span>Ye</span></div>
+                    <div class="liRight"> <span class="lhColor">emliy</span><span class="unJoined">@163.om</span></div>
+                </li> <li class="tran">
+                    <div class="liLeft"><span class="lhColor">emliy</span><span>Ye</span></div>
+                    <div class="liRight"> <span class="lhColor">emliy</span><span class="unJoined">@163.om</span></div>
+                </li>
+                </ul>
+            </div>
+            <!--无搜索结果-->
+            <div class="search-cont unfound" style="display:none;">
+                <img src="dist/image/lostError.png" />
+                <p>未找到此用户</p>
+                <p class="email">emliyYe@163.com</p>
+                <button class="btn ">邀请</button>
+
+            </div>
+
+        </div>
+        <ul class="search-result">
+            <li class="tran">
+                <div class="liLeft"><span>emliy@163.om</span></div>
+                <div class="liRight"> <span class="joined">已加入</span></div>
+            </li>
+            <li class="tran">
+                <div class="liLeft"><span>emliy@163.om</span></div>
+                <div class="liRight"> <span class="unJoined">待激活</span></div>
+            </li>
+        </ul>
+
+    </div>
+
+</div>
+
+<!--弹出层2  移交团队-->
+<div class="Popups" style="display: none;">
+    <a href="javascript:;" class="cancel iconfont icon-close"></a>
+
+    <div class="p-cont p-giveOther">
+        <p class="p-title">移交团队</p>
+
+        <ul>
+            <li class="tran">
+                <div class="liLeft"><img src="/image/headImg.png" alt=""><span>emliy@163.om</span></div>
+                <div class="liRight"> <button class="btn tran">移交</button></div>
+            </li>
+            <li class="tran">
+                <div class="liLeft"><img src="/image/headImg.png" alt=""><span>emliy@163.om</span></div>
+                <div class="liRight"> <button class="btn tran">移交</button></div>
+            </li>
+            <li class="tran">
+                <div class="liLeft"><img src="/image/headImg.png" alt=""><span>emliy@163.om</span></div>
+                <div class="liRight"> <button class="btn tran">移交</button></div>
+            </li>
+            <li class="tran">
+                <div class="liLeft"><img src="/image/headImg.png" alt=""><span>emliy@163.om</span></div>
+                <div class="liRight"> <button class="btn tran">移交</button></div>
+            </li>
+
+
+        </ul>
+    </div>
+</div>
+
+<!--成功错误等提示层-->
+<div class="toast toast-success" style="display: none;">
+    <div class="t-cont">团队移交成功!</div>
+</div>
+
+<div class="toast toast-error" style="display: none;">
+    <div class="t-cont">团队移交失败!</div>
+</div>
+
+<script>
+    tinymce.init({
+        selector: '#mytextarea'
+    });
+
+    var button = document.getElementsByClassName("btnSave")[0];
+    button.onclick = function () {
+        var activeEditor = tinymce.activeEditor;
+        var editBody = activeEditor.getBody();
+        activeEditor.selection.select(editBody);
+        var text = activeEditor.selection.getContent( { 'format' : 'text' } );
+        alert(text+"//"+tinyMCE.activeEditor.getContent());
+    }
+</script>
+<script src="/assets/shared.js"></script>
+<script src="/assets/index.bundle.js"></script>
+</body>
+</html>

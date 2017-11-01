@@ -1,0 +1,168 @@
+@import "common";
+  //首页
+.homePage{
+  margin: 35px auto 0;
+  h2{
+    font-size: @fontSize4;
+    color: @color;
+    font-weight: normal;
+  }
+  .title-right{
+    cursor: pointer;
+    text-align: right;
+  }
+  .cardList{
+    margin: 20px -10px;
+  }
+  .ant-col-md-8.ant-col-lg-6{
+    padding: 10px;
+  }
+  .pro-card{
+    cursor: pointer;
+  }
+  .card{
+    height: 168px;
+    color: #FFFFFF;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    position: relative;
+    border-radius: 5px;
+    .ant-card-body{
+      padding: 20px;
+    }
+    .xiabiao{
+      border:18px solid @color4;
+      border-top-color: transparent;
+      border-left-color:transparent;
+      border-bottom-right-radius: 4px;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      .iconfont{
+        position: absolute;
+        bottom: -15px;
+        right: -15px;
+        font-size: @fontSize2;
+        color: #ffffff;}
+    }
+    .xiabiao:hover{
+      border-color:rgba(253,138,92,0.8);
+      border-top-color: transparent;
+      border-left-color:transparent;
+    }
+  }
+  .card-mask{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.2);
+  }
+  .card-cont{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .card-intro,.card-msg{
+    position: relative;
+    opacity: 1;
+    transition: all 0.5s;
+    .cardName{
+      font-size: 24px;
+      line-height:30px;
+      padding:0;
+      margin-bottom:10px;
+    }
+    .cardSummary{
+      .moreLine(3)
+    }
+  }
+  .card-cont{
+    text-align: center;
+    .cc{
+      display: inline-block;
+      opacity: 0;
+      .yuanzheng(68px);
+      font-size: 20px;
+      background-color: #fff;
+      transform: translateY(50px) rotateZ(180deg);
+      transition: all 0.5s;
+      cursor: pointer;
+      .iconfont{
+        font-size: 20px;
+        color: @color;
+      }
+      :hover{
+        color: @color3;
+      }
+    }
+    .cc1{transition-delay:0.1s; }
+    .cc2{transition-delay:0.15s; }
+    .cc3{transition-delay:0.2s; }
+  }
+  .card:hover {
+    .card-intro{
+      opacity: 0;
+    }
+    .cc {
+      opacity: 1;
+      transform:translateY(0px) rotateZ(0deg);
+    }
+  }
+  .card-add{
+    background: #ffffff;
+    color: fade(@color2,30%);
+    text-align: center;
+    cursor: pointer;
+    &:hover{
+      color:fade( @color2,20%);
+    }
+    .card-add-icon{
+      display: inline-block;
+      .zheng(48px);
+      margin-top: 25px;
+      margin-bottom: 10px;
+      font-size: 48px;
+    }
+    .card-add-word{
+      font-size: @fontSize4;
+    }
+  }
+}
+.cc:hover .iconfont{
+  color: @color3 !important;
+}
+
+.lang{
+  position: absolute;
+  display: inline-block;
+  width: 30px;
+  padding: 2px;
+  line-height: 20px;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 10px;
+  font-weight: 600;
+  border-radius: 3px;
+  top: 50%;
+  right: 5px;
+  transform: translateY(-50%);
+  border: 1px solid #fff;
+  color: #fff;
+  cursor: pointer;
+  transition: all .3s ease-in;
+  &:hover{
+    border:1px solid #108ee9 ;
+    color: #108ee9;
+  }
+  &:active{
+    box-shadow:0 0 30px #108ee9 ;
+  }
+}

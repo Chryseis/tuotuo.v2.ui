@@ -1,0 +1,332 @@
+@import "common";
+.page{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-image: url(@bgImg1);
+  background-size: cover;
+}
+//页面
+.loginPage{
+  position: absolute;
+  top:50%;
+  left:50%;
+  width: 500px;
+  height: 600px;
+  color:@color2;
+  background-color: #fff;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-left: -250px;
+  margin-top: -300px;
+  .btn{
+    height: 50px;
+  }
+  input{
+    border-radius: 4px;
+    outline: none;
+    box-sizing:border-box;
+    transition:all 0.3s ease-out;
+  }
+  .box-cont{
+    width: 1500px;
+    background-color: #fff;
+    height: 100%;
+    overflow-x: hidden;
+  }
+
+  .sign{
+    width: 500px;
+    height: 100%;
+    box-sizing: border-box;
+    padding:0 70px;
+  }
+  .banner{
+    display: block;
+    padding: 42.6px 0 39.6px;
+    margin: 0 auto;
+  }
+
+  //输入框样式
+  .form-group{
+    height: 82px;
+    margin-bottom: 0;
+    .input{
+      height: 50px;
+      border: 1px #dddddd solid;
+      border-radius: 4px;
+      font-size: @fontSize2;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      transition: all 0.3s ease-out;
+      -webkit-transition: all 0.3s ease-out;
+      -moz-transition: all 0.3s ease-out;
+      em{
+        display: inline-block;
+        width: 50px;
+        line-height:50px;
+        font-size: 20px;
+        text-align: center;
+      }
+      input{
+        outline: none;
+        width: 300px;
+        height: 48px;
+        vertical-align: top;
+        border:none;
+        &::-moz-placeholder {
+          color: rgba(204,204,204,1);
+        }
+        &:-ms-input-placeholder {
+          color: rgba(204,204,204,1);
+        }
+        &::-webkit-input-placeholder {
+          color: rgba(204,204,204,1);
+        }
+      }
+      input:focus{
+        box-shadow: 0 0 0 #fff;
+
+      }
+      .password{
+        width: 185px;
+      }
+      .forgetPass,.resend,.refresh{
+        vertical-align: top;
+        display: inline-block;
+        line-height:50px;
+        color: #5597FF;
+        text-decoration: none;
+      }
+      .forgetPass:hover,.resend:hover,.refresh:hover{
+        text-decoration: underline;
+      }
+    }
+    //js :input's focus or blur
+    .border{
+      border:1px solid #5597FF;
+    }
+    .borderError{
+      border-color: #F74555;
+    }
+    .borderSuccess{
+      border-color: #5597ff;
+    }
+  }
+  .link-button{
+    width: 100%;
+    background-color: #03a9f4;
+    color: #ffffff;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 4px;
+    display: block;
+    position: relative;
+  }
+  .link-button:hover{
+    background-color: #0096da;
+  }
+  .link-button:hover span{
+    display: inline-block;
+  }
+  .loginBtn{
+    width: 100%;
+    background-color: #5597FF;
+    color: #ffffff;
+    font-size: 18px;
+    a{
+      text-decoration: none;
+      display: block;
+      color: #fff;
+    }
+    .loading{
+      position: absolute;
+      top: 10px;
+      right: 20px;
+    }
+  }
+  .loginBtn:hover{
+    background-color: #5597FF;
+    color: #fff;
+  }
+  //第三方登陆
+  .otherLogin{
+    margin: 25px 0;
+    text-align: center;
+    font-size: @fontSize;
+    color:#ccc;
+  }
+  .otherLink{
+    text-align: center;
+    a{
+      display: inline-block;
+      width: 110px;
+      color: #999999;
+      font-size: 23px;
+    }
+    a:hover{
+      color: #ffffff;
+    }
+    .icon-weixin{float: left;}
+    .icon-weibo{float: right;}
+    .icon-weixin:hover{
+      background-color: #31C159;
+    }
+    .icon-qq:hover{
+      background-color: #37ADFF;
+    }
+    .icon-weibo:hover{
+      background-color: #D72F33;
+    }
+  }
+
+  .lm-ft{
+    position: absolute;
+    bottom: 43px;
+    width: 360px;
+    font-size: @fontSize;
+    color: #999;
+    text-align: center;
+    margin: 0;
+    a{
+      color: #5597FF ;
+    }
+    a:hover{
+      text-decoration: underline;
+    }
+  }
+  .sign{
+    .signTitle{
+      font-size: @fontSize2;
+      text-align: center;
+      margin:0 0 30px;
+      .emailVerify{
+        color: #5597FF;
+      }
+      .emailVerify:hover{
+        text-decoration: underline;
+      }
+    }
+    .signUp-verify{
+      .input{
+        float: left;
+        width: 200px;
+        .signUp-verify-input{
+          text-indent: 20px;
+          width: 135px;
+        }
+      }
+      .verifyPic{
+        float: right;
+        width:145px;
+        height: 50px;
+        background-color: #eeeeee;
+        border:1px solid #ddd;
+        border-radius: 5px;
+      }
+    }
+  }
+  .signUp{
+    .banner{
+      padding-bottom: 43.8px;
+    }
+    .signTitle{
+      margin-bottom: 44px;
+    }
+  }
+  //验证
+  .signVerify{
+    .banner{
+      padding-bottom: 37.8px;
+    }
+    .signTitle{
+      margin-bottom: 0px;
+      line-height:30px;
+    }
+    .form-group{
+      margin-top: 64px;
+    }
+    .input{
+      input{
+        width: 240px;
+      }
+      .signVerify-time{
+        display: inline-block;
+        line-height:50px;
+        font-size: @fontSize;
+        color: #999;
+        vertical-align: top;
+        em{
+          width:auto;
+          font-style: normal;
+          font-size: @fontSize;
+        }
+      }
+      .resend{
+        font-size: @fontSize;
+      }
+    }
+  }
+
+  //设置密码
+  .signPassword{
+    .banner{
+      padding-bottom: 43.8px;
+    }
+    input{
+      text-indent: 20px;
+    }
+  }
+  //注册成功
+  .signSuccess{
+    .banner{
+      width:416px;
+      height: 286px;
+      margin-left: -28px;
+      padding: 55px 0 59px;
+      box-sizing: content-box;
+    }
+    .signTitle{
+      font-size: 18px;
+      color: @color2;
+      margin-bottom: 41px;
+    }
+
+  }
+  .signUser{
+    input{
+      text-indent: 20px;
+    }
+    .HeaderPic{
+      display: block;
+      width: 100px;
+      height: 100px;
+      line-height:100px;
+      text-align: center;
+      color: #ffffff;
+      border-radius: 50%;
+      background-size: cover;
+      background-position: center;
+      margin: 0 auto;
+      margin-top: 61px;
+      margin-bottom: 95px;
+      cursor: pointer;
+    }
+  }
+  .signOther{
+    .loginBack{
+      width:100%;
+      background-color: #fff;
+      color: #5597FF;
+      font-size: @fontSize2;
+      border:1px solid #5597ff;
+      margin-top: 32px;
+      .loading{
+        position: absolute;
+        top: 10px;
+        right: 20px;
+      }
+    }
+  }
+
+}

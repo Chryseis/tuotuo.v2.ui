@@ -1,0 +1,255 @@
+@import "common";
+.addProTeam {
+  box-sizing: border-box;
+  background-color: #fff;
+  padding: 50px 0 80px;
+  font-size: 18px;
+  margin: 43px auto 0;
+  border-radius: 5px;
+  > div {
+    margin-bottom: 32px;
+  }
+  .ant-form-item-with-help {
+    margin-bottom: 14px !important;
+  }
+  h2 {
+    font-size: 24px;
+    color: @color;
+    margin-bottom: 8px;
+  }
+  textarea {
+    height: 100px !important;
+    resize: none;
+  }
+  .title {
+    height: 30px;
+    font-size: 18px;
+    margin-top: 10px;
+    vertical-align: top;
+  }
+  .cont {
+    font-size: 18px;
+  }
+  input[type="text"]{
+    height: 50px;
+  }
+  .btn {
+    width: 100%;
+    .btn1;
+    height: 50px;
+    &:hover{
+      background-color:fade(@color3,80%);
+    }
+  }
+  .ant-form-explain{
+    text-indent: 55%;
+  }
+}
+//团队/项目
+.pro-Team {
+  .pt-hd {
+    padding: 40px 0;
+    background-color: #fff;
+    .pt-hd-cont {
+      position: relative;
+    }
+    h1 {
+      font-size: 36px;
+      font-weight: 400;
+      margin-bottom: 10px;
+    }
+    .pt-setting{
+      position: absolute;
+      right: 0;
+      top: 10px;
+      color: @color6;
+      i{
+        font-size: 24px;
+      }
+    }
+    .summary{
+      font-size: 18px;
+      line-height: 36px;
+    }
+  }
+  .pt-bd {
+    margin-top: 35px;
+    position: relative;
+    h2 {
+      float: left;
+      font-size: 18px;
+      margin: 0;
+      em {
+        display: inline-block;
+        font-style: normal;
+        font-weight: 500;
+        color: @color6;
+        .yuanzheng(24px);
+        background-color: #fff;
+        margin-left: 15px;
+      }
+    }
+  }
+  .memberList {
+    margin-top: 20px;
+  }
+  .card {
+    height: 120px;
+    font-size: 14px;
+    margin: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+
+    .ant-card-body{
+      padding: 20px;
+    }
+  }
+  .add-member {
+    position: fixed;
+    bottom: 5%;
+    right: 10%;
+    .yuanzheng(80px);
+    color: #FFFFFF;
+    background-color: @color3;
+    &:extend(.tran);
+    &:hover{
+      background-color: fade(@color3,80%);
+    }
+    i {
+      font-size: 30px;
+    }
+  }
+}
+.pt-memberPic {
+  float: left;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-right: 5%;
+}
+.pt-memberIntro {
+  overflow: auto;
+  .mt-name {
+    font-size: 18px;
+    margin-bottom: 5px;
+    i {
+      margin-left: 5px;
+    }
+  }
+  .mt-email {
+    display: block;
+    margin-bottom: 5px;
+    .oneLine;
+  }
+
+}
+.memberTagList {
+  display: inline-block;
+  padding: 0;
+  list-style: none;
+  vertical-align: middle;
+  li {
+    display: inline-block;
+    .btn1;
+    padding: 0px 6px;
+    margin-right: 10px;
+    border-radius: 3px;
+  }
+}
+.memberSetting {
+  font-size: 14px;
+  .ms-cont{
+    padding:20px;
+  }
+  .pt-memberPic {
+    width: 60px;
+    height: 60px;
+  }
+  .title {
+    display: inline-block;
+    width: 28%;
+    color: @color5;
+    vertical-align: middle;
+  }
+  .cont{
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .cd-msg {
+    float: left;
+    width: 100%;
+    margin-top: 20px;
+    border-top: 1px solid @color7;
+    > div {
+      margin: 10px 0;
+    }
+  }
+  .btn {
+    width: 100%;
+    line-height: 50px;
+    padding: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    cursor: default;
+  }
+  .btnColor1{
+    a {
+      color: @color4;
+    }
+  }
+  .btnColor2{
+    span {
+      color: #ffffff;
+    }
+    a {
+       text-decoration: underline;
+       color: #ffffff;
+     }
+  }
+  .card-cancel {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    color: @color6;
+    i {
+      font-size: 16px;
+    }
+  }
+  .ant-select-selection.ant-select-selection--single {
+    border:none;
+  }
+  .ant-select-selection.ant-select-selection--multiple{
+    padding: 7px 0;
+  }
+  ul{
+    .ant-select-selection__choice{
+      height: 21px !important;
+      line-height: 21px !important;
+      color: #fff;
+      background-color: @color3;
+    }
+    .ant-select-selection__choice__remove{
+      color: #fff !important;
+    }
+  }
+
+}
+
+.memberSetting-container{
+  width: 25%;
+  .ant-popover-inner-content{
+    padding: 0;
+  }
+  .ant-popover-inner{
+    position: relative;
+  }
+}
+.deleteMember{
+  width: 250px;
+  .anticon{
+    line-height: 2;
+  }
+  .ant-popover-message-title{
+    font-size: 14px;
+  }
+}
